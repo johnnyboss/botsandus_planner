@@ -1,0 +1,7 @@
+<library path="lib/libbotsandus_planner">
+  <class name="botsandus_planner/BotsAndUsPlannerROS" type="botsandus_planner::BotsAndUsPlannerROS" base_class_type="nav_core::BaseLocalPlanner">
+    <description>
+      BotsAndUs Simple Planner
+    </description>
+  </class>
+</library>

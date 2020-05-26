@@ -1,0 +1,4 @@
+<launch>
+    <test test-name="test" pkg="botsandus_planner" type="unittest_planner" time-limit="10.0">
+    </test>
+</launch>

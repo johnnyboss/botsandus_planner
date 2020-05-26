@@ -1,0 +1,24 @@
+<launch>
+	
+        <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="odom" />
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- move_base           <param name="base_local_planner" value="botsandus_planner/BotsAndUsPlannerROS" />
+  
+
+-->
+ 
+
+ <include file="$(find botsandus_planner)/launch/turtlebot3_world.launch">
+    <arg name="model" value="$(arg model)" />
+  </include>
+
+<include file="$(find botsandus_planner)/launch/turtlebot3_navigation.launch">
+    <arg name="model" value="$(arg model)" />
+  </include>
+
+
+  <test test-name="botsandus_planner_test" pkg="botsandus_planner" type="botsandus_planner_test.py" time-limit="120.0"/>
+</launch>
